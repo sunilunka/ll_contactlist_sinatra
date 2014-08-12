@@ -6,7 +6,6 @@ end
 get '/contacts.json' do
   
   @contacts = Contact.all
-
   @contacts.to_json
   
 end
