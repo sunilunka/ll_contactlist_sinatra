@@ -3,15 +3,23 @@ get '/' do
   erb :index
 end
 
+get '/contacts.json' do
+  
+  @contacts = Contact.all
 
-  def new
-  end
+  @contacts.to_json
+  
+end
 
-  def create
-  end
+post '/' do 
 
-  def update
-  end
+  @contact = Contact.new(
+    firstname: params[:firstname],
+    lastname: params[:lastname],
+    email: params[:email]
 
-  def destroy
-  end
+  )
+
+end
+
+
